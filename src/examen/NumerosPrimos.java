@@ -22,53 +22,53 @@ public class NumerosPrimos {
     public static boolean p = false;
 
     public static void main(String arg[]) {
-        int nD = 0;
-        int nd = 0;
-        nD = Integer.parseInt(arg[0]);
-        if (nD <= 0) {
+        int numDigitos1 = 0;
+        int numDigitos2 = 0;
+        numDigitos1 = Integer.parseInt(arg[0]);
+        if (numDigitos1 <= 0) {
             System.out.println("Ingrese como parámetro, un numero de digitos correcto (mayor que 0): ");
         }
-        for (int i = 1; i <= 99999; i++) {
-            int div = i;
-            int c = 0;
+        for (int inicio1 = 1; inicio1 <= 99999; inicio1++) {
+            int divisor = inicio1;
+            int contador1 = 0;
 
-            while (div != 0) {
-                div = div / 10;
-                c++;
+            while (divisor != 0) {
+                divisor = divisor / 10;
+                contador1++;
             }
-            nd = c;
+            numDigitos2 = contador1;
 
-            if (nd == nD) {
-                if (i < 4) {
+            if (numDigitos2 == numDigitos1) {
+                if (inicio1 < 4) {
                     p = true;
                 } else {
-                    if (i % 2 == 0) {
+                    if (inicio1 % 2 == 0) {
                         p = false;
                     } else {
-                        int c1 = 0;
-                        int i1 = 1;
-                        int l = (i - 1) / 2;
-                        if (l % 2 == 0) {
-                            l--;
+                        int contador2 = 0;
+                        int inicio2 = 1;
+                        int lugar = (inicio1 - 1) / 2;
+                        if (lugar % 2 == 0) {
+                            lugar--;
                         }
-                        while (i1 <= l) {
-                            if (i % i1 == 0) {
-                                c1++;
+                        while (inicio2 <= lugar) {
+                            if (inicio1 % inicio2 == 0) {
+                                contador2++;
                             }
-                            i1 += 2;
-                            if (c1 == 2) {
-                                i1 = l + 1;
+                            inicio2 += 2;
+                            if (contador2 == 2) {
+                                inicio2 = lugar + 1;
                             }
                         }
 
-                        if (c1 == 1) {
+                        if (contador2 == 1) {
                             p = true;
                         }
                     }
                 }
 
                 if (p == true) {
-                    System.out.println(i);
+                    System.out.println(inicio1);
                 }
             }
         }
