@@ -13,22 +13,22 @@ public class Factorial {
 
     public static void main(String[] args) {
 
-        int j;
-        int f;
+        int variable1;
+        int variable2;
 
-        j = 8;
+        variable1 = 8;
 
         int i;
-        if (j == 0) {
-            f = 1;
+        if (variable1 == 0) {
+            variable2 = 1;
         } else {
-            f = 1;
-            for (i = j; i >= 1; i--) {
-                f = f * i;
+            variable2 = 1;
+            for (i = variable1; i >= 1; i--) {
+                variable2 = variable2 * i;
             }
         }
 
-        System.out.println(f);
+        System.out.println(variable2);
 
     }
 
